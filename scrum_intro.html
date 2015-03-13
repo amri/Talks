@@ -1,0 +1,338 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>SCCIM Introduction</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>SCCIM</h1>
+					<h4>An Introduction</h4>
+					<small>23 February 2015</small>
+				</section>
+				<section>
+					<h2>Steps</h2>
+					<ul>
+						<li class="fragment">SCCIM Workstation Installation</li>
+						<li class="fragment">SCCIM Development Workflow</li>
+						<li class="fragment">Logging, Debugging, Unit Testing</li>
+					</ul>
+				</section>
+				<section>
+					<section data-background="assets/sccim/sccim_background.png">
+						<div style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 10px;">
+							<h2>SCCIM OS Development Workflow</h2>
+							<ul>
+								<li class="fragment">Complete the mapping documentation (Excel)</li>
+								<li class="fragment">Add Transaction Code under Transactions (SCCIM Workstation)</li>
+								<li class="fragment">Define MSET under Message Set (SCCIM Workstation)</li>
+								<li class="fragment">Map MSET to AIT under Mapping (SCCIM Workstation)</li>
+								<li class="fragment">Map Component Context under Applications (SCCIM Workstation)</li>
+								<li class="fragment">Component Context Generation under Applications (SCCIM Workstation)</li>
+								<li class="fragment">Develop Component business logic (Eclipse)</li>
+							</ul>
+						</div>
+					</section>
+					<section  data-background="assets/sccim/excel_mapping.png">
+						<div style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 15px;">
+							<h3>Complete the mapping documentation (Excel)</h3>
+						</div>
+					</section>
+					<section data-background="assets/sccim/tc_workflow.png">
+						<div style="background-color: rgba(0, 0, 0, 0.7); color: #fff; padding: 15px;">
+							<h3>Add Transaction Code under Transactions</h3>
+							<ul>
+								<li class="fragment">Add Transaction Code (4 Digits & description)</li>
+								<li class="fragment">Create TC Workflow (include relevant components)</li>
+								<li class="fragment">Save & Publish TC Workflow</li>
+							</ul>
+						</div>
+					</section>
+					<section>
+						<h3>Processing Status (CC)</h3>
+						<table>
+							<thead>
+								<tr>
+									<th>Code</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+										<td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+										<td>Request</td>
+									</tr>
+									<tr>
+										<td>/&nbsp;&nbsp;&nbsp;</td>
+										<td>Good Response</td>
+									</tr>
+									<tr>
+										<td>.&nbsp;&nbsp;&nbsp;</td>
+										<td>Bad Response</td>
+									</tr>
+									<tr>
+										<td>.AO1</td>
+										<td>Transaction Timeout</td>
+									</tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<h3>Define MSET under Message Set</h3>
+					</section>
+					<section data-background="assets/sccim/mset_mapping.png">
+						<div style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 15px;">
+							<h3>Map MSET to AIT under Mapping</h3>
+							<h4>Request MSET -> AIT</h4>
+							<h4>AIT -> Response MSET</h4>
+						</div>
+					</section>
+					<section>
+						<h3>Map Component Context under Applications</h3>
+						<img src="assets/sccim/component_binding.png" height="90%">
+					</section>
+					<section>
+						<h3>Component Context Generation under Applications</h3>
+						<img src="assets/sccim/component_gen.png" width="60%">
+					</section>
+					<section>
+						<h3>Develop Component business logic</h3>
+						<img src="assets/sccim/component_eclipse.png" width="80%">
+					</section>
+					<section>
+						<h3>Generate MSET & Component Context POJO</h3>
+						<small>https://smes.silverlakegroup.com.my:4430/svn/mleb/HLB/sccim/documentation/trunk/code_generator_app/CodeGen</small>
+						<img src="assets/sccim/codegen_code.png" width="80%">
+					</section>
+					<section>
+						<h3>Component Development</h3>
+						<h4>Definition of Done</h4>
+						<ul>
+							<li class="fragment">Code checked-in</li>
+							<li class="fragment">Professional quality code</li>
+							<li class="fragment">Unit Tests Passed</li>
+							<li class="fragment">Functional Tested (SOAP UI)</li>
+							<li class="fragment">No known defects</li>
+						</ul>
+					</section>
+					<section>
+						<h3>Component Deployment</h3>
+						<ul>
+							<li class="fragment">Checkout latest code</li>
+							<li class="fragment">Clean Build (Ant)</li>
+							<li class="fragment">Backup existing component jar (if any)</li>
+							<li class="fragment">Upload the new jar</li>
+							<li class="fragment">Restart the component ('kill -9' & 'SP COMP')</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Logging</h2>
+						<small>Where ? and for what ?</small>
+					</section>
+					<section  data-background="assets/sccim/db_log.png">
+						<div style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 3px;">
+						<table>
+							<h3>Logs in DB</h3>
+							<thead>
+								<tr>
+									<th>Location</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>DB://X1PSYSLOG</td>
+									<td>This database log table holds all events (system log) regarding the components (i.e., Successful cold start of process, process stopped, unable to start process)</td>
+								<tr>
+									<tr>
+										<td>DB://X1PTRCLOG</td>
+										<td>This database log table holds all events (trace log) regarding the transaction codes (i.e., TC stops at which process)</td>
+									<tr>
+							</tbody>
+						</table>
+						</div>
+					</section>
+					<section>
+						<table>
+							<h3>Logs in /tmp folder</h3>
+							<thead>
+								<tr>
+									<th>Location</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+										<td>/tmp/FEIPI00<i>XX</i>.DMP or /tmp/FEIPO00<i>XX</i>.DMP</td>
+										<td>Look into this log to check if your FEIP line module retrieve all your message</td>
+									<tr>
+									<tr>
+										<td>/tmp/FEOPI00<i>XX</i>.DMP or /tmp/FEOPO00<i>XX</i>.DMP</td>
+										<td>Look into this log to check if your FEOP line module retrieve all your message</td>
+									<tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<table>
+							<h3>Logs in /tmp folder (continued)</h3>
+							<thead>
+								<tr>
+									<th>Location</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+										<td>tmp/scmobils.<i>IAMM</i>.IAIT.tmp and /tmp/scmobils.<i>IAMM</i>.ICTX.tmp</td>
+										<td>Look into this log to check if you’ve successfully mapped from MSET to AIT and AIT to L3 component</td>
+									<tr>
+									<tr>
+										<td>/tmp/scmobils.<i>IAMM</i>.OCTX.tmp and /tmp/scmobils.<i>IAMM</i>.OAIT.tmp</td>
+										<td>Look into this log to check if you’ve successfully mapped from your L3 component to L3 Comp Context and to AIT</td>
+									<tr>
+							</tbody>
+						</table>
+					</section>
+					<section>
+						<table>
+							<h3>Logs in secondary server</h3>
+							<thead>
+								<tr>
+									<th>Location</th>
+									<th>Description</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr>
+										<td>/export/home/scmobils/ SCCIMOSSecSvrMobV12/ log/X1<i>IAMM</i>.log</td>
+										<td>Look into this log to check if the process (i.e., IAMM) couldn’t be started or suddenly stop after being brought up</td>
+									<tr>
+									<tr>
+										<td>/export/home/scmobils/ SCCIMOSSecSvrMobV12/ log/<i>IAMM</i>log4j.log</td>
+										<td>Look into this log to see debug/error/warning messages that is being logged by the process or the component (i.e., IAMM).</td>
+									<tr>
+							</tbody>
+						</table>
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Debugging</h2>
+						<ul>
+							<li>Tomcat & JPDA + Eclipse Debugger</li>
+						</ul>
+					</section>
+				</section>
+				<section>
+					<section >
+						<h2>Unit Testing</h2>
+						<ul>
+							<li>DAO Implementations (covers some)</li>
+							<li>Module Implementations (covers most)</li>
+						</ul>
+						<img src="assets/coverage.png" width="80%">
+					</section>
+				</section>
+				<section>
+					<h3>Documentation</h3>
+					<p>https://smes.silverlakegroup.com.my:4430/ svn/mleb/HLB/sccim/documentation</p>
+				</section>
+				<section  data-background="assets/tools.jpg">
+					<div style="background-color: rgba(0, 0, 0, 0.8); color: #fff; padding: 20px;">
+					<h3>Tools of the trade</h3>
+						<table>
+							<tr>
+								<td>0racle 11g Client</td>
+								<td>Database client & drivers</td>
+							</tr>
+							<tr>
+								<td>0xDBE</td>
+								<td>Database IDE (Oracle, MySQL, DB2)</td>
+							</tr>
+							<tr>
+								<td>Putty</td>
+								<td>Remote server terminal console</td>
+							<tr>
+							<tr>
+								<td>FileZilla/WinSCP</td>
+								<td>Remote file viewer</td>
+							<tr>
+							<tr>
+								<td>SOAP UI</td>
+								<td>Functional Testing</td>
+							<tr>
+						</table>
+					</div>
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
