@@ -141,9 +141,82 @@
 						<img src="assets/scrum/velocity.png" style="border:0"/>
 					</section>
 					<section>
+						<h1>Sprint</h1>
+						<p class="fragment">So what do you do within sprint ?</p>
+					</section>
+					<section>
+						<p class="fragment">1. Start a day with <b>Daily Standup</b></p>
+						<p class="fragment">2. Complete a task to achieve <b>acceptance criteria</b> of a user story</p>
+						<small class="fragment">... and if you are developing a software ... </small>
+						<p class="fragment">3. Pair up, Test-Driven Development, Ship it</p>
+						<p class="fragment">4. Try to automate things</p>
+					</section>
+					<!-- NOT YET READY
+					<section>
 						<h1>Cost Estimation</h1>
 						<p>Cost is a resource sacrificed or foregone or consumed to achieve a specific objective or something given up in exchange.</p>
 						<img src="assets/time_cost_scope.png" style="border:0"/>
+					</section>
+					-->
+				</section>
+				<section>
+					<section>
+						<h1>Documentation</h1>
+						<ul>
+							<li>Requirements</li>
+							<li>Agile Modelling</li>
+						</ul>
+					</section>
+					<section>
+						<h2>User Story</h1>
+						<small>In Waterfall project, the customer defines his requirements through functional specifications (FSD)</small>
+						<p class="fragment">Instead use a user story, to capture initial user needs</p>
+						<ul>
+							<li class="fragment">Name, Intention, Criteria</li>
+							<li class="fragment">Make the user story as small as possible</li>
+							<li class="fragment">Make it testable (can write a test to verify it)</li>
+							<li class="fragment">Make it visible for all</li>
+						</ul>
+					</section>
+					<section>
+						<h2>Backlog</h2>
+						<table>
+							<tr>
+								<th>Product Backlog</th>
+								<th>Sprint Backlog</th>
+							</tr>
+							<tr>
+								<td>Through out the project lifetime</td>
+								<td>Within a sprint</td>
+							</tr>
+							<tr>
+								<td>Will grow/shrink</td>
+								<td>Must not grow</td>
+							</tr>
+							<tr>
+								<td>Should be within project constraints (scope/time/cost)</td>
+								<td>Should be within team's velocity </td>
+							</tr>
+						</table>
+					</section>
+					<section>
+						<h1>Agile Modelling</h1>
+					</section>
+					<section>
+						<h3>Get a user story from the customer</h3>
+						<img src="assets/xp/am_user_story.jpg"/>
+					</section>
+					<section>
+						<h3>Create a workflow model to better understand the user story</h3>
+						<img src="assets/xp/am_workflow.jpg" width="60%"/>
+					</section>
+					<section>
+						<h3>Develop mockup screens</h3>
+						<img src="assets/xp/am_mockup.jpg" width="40%"/>
+					</section>
+					<section>
+						<h3>Use mockups & workflow together to build data model</h3>
+						<img src="assets/xp/am_data_model.jpg" width="60%"/>
 					</section>
 				</section>
 
@@ -157,29 +230,28 @@
 							<li class="fragment">Pay down technical debt</li>
 							<li class="fragment">Improve customer involvement</li>
 							<li class="fragment">Provide needed resources</li>
-							<li class="fragment">Offload programmer duties</li>
+							<li class="fragment">Offload programmer duties (automate things)</li>
 						</ul>
 					</section>
 					<section>
-						<h1>Cycle time (Kanban)</h1>
-						<p>Time taken to complete that particular story</p>
+						<h1>Automation</h1>
 						<ul>
-							<li class="fragment"><b>Entry date</b>: The date on which a story enters the story queue.</li>
-							<li class="fragment"><b>Start date</b>: The date on which the story enters the first story process step column</li>
-							<li class="fragment"><b>Done date</b>: Then finally the date it reaches the last ‘done’ column at the end of the board, which means the date it is completed</li>
+							<li class="fragment">Automate the build (Ant/Maven/Gradle/NAnt)</li>
+							<li class="fragment">Hyperaware Editing (Infinitest/NCrunch)</li>
+							<li class="fragment">Automate the acceptance tests (Robot Framework / CodedUI)</li>
+							<li class="fragment">Continous Integration (Jenkins/TFS)</li>
 						</ul>
-						<p class="fragment"><b>Working cycle time</b> = the difference between the <b>start date</b> and <b>done date</b></p>
 					</section>
 					<section>
 						<h1>Topless Meetings</h1>
-						<p class="fragment">Why Successful People Never Bring Smartphones Into Meetings<sup>1</sup></p>
+						<p>Why Successful People Never Bring Smartphones Into Meetings<sup>1</sup></p>
 						<ul>
 							<li class="fragment">Lack of respect</li>
 							<li class="fragment">Lack of attention</li>
 							<li class="fragment">Lack of listening</li>
 							<li class="fragment">Lack of power</li>
 						</ul>
-						<p  class="fragment" style="position:absolute;bottom:0;width:100%; height:10px;"><font size="3">[1] http://www.forbes.com/sites/kevinkruse/2013/12/26/why-successful-people-never-bring-smartphones-into-meetings/</font></p>
+						<p  style="position:absolute;bottom:0;width:100%; height:10px;"><font size="3">[1] http://www.forbes.com/sites/kevinkruse/2013/12/26/why-successful-people-never-bring-smartphones-into-meetings/</font></p>
 					</section>
 					<section>
 						<h1>Ad-hoc & Frequent Communications</h1>
