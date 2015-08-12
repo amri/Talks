@@ -1,0 +1,293 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>Docker Introduction</title>
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+		<style TYPE="text/css">
+			table.stat th, table.stat td {
+		  font-size : 77%;}
+		</style>
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>Docker</h1>
+					<h4>Automated Infrastructure</h4>
+					<small>11 August 2015</small>
+				</section>
+				<section>
+					<h2>Topics</h2>
+					<ul>
+						<li class="fragment">Console</li>
+						<li class="fragment">Creation</li>
+						<li class="fragment">Change Management</li>
+						<li class="fragment">Composing</li>
+					</ul>
+				</section>
+				<section>
+					<section >
+						<div>
+							<h3>Console</h3>
+							<table>
+								<thead>
+									<tr>
+										<th>Code</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody style="font-size: 0.9em;">
+										<tr>
+											<td>docker info</td>
+											<td>get details of the docker host</td>
+										</tr>
+										<tr>
+											<td>docker images</td>
+											<td>list all images</td>
+										</tr>
+										<tr>
+											<td>docker ps</td>
+											<td>list running container</td>
+										</tr>
+										<tr>
+											<td>docker ps -a</td>
+											<td>list all container</td>
+										</tr>
+										<tr>
+											<td>docker ps -a</td>
+											<td>list all container</td>
+										</tr>
+										<tr>
+											<td>docker inspect &lt;container_id&gt;</td>
+											<td>get settings for a container</td>
+										</tr>
+										<tr>
+											<td>docker logs &lt;container_id&gt;</td>
+											<td>view logs for a container</td>
+										</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+					<section >
+						<div>
+							<h3>Creation (1)</h3>
+							<table>
+								<thead>
+									<tr>
+										<th>Code</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody style="font-size: 0.7em;">
+										<tr>
+											<td>docker build -t &lt;image_name&gt; .</td>
+											<td>build an &lt;image_name&gt; using a Dockerfile in the current directory</td>
+										</tr>
+										<tr>
+											<td>
+												docker run -d -p  &lt;host_port&gt;:&lt;guest_port&gt; <br>
+												           --link  &lt;container_name&gt;:&lt;alias&gt;<br>
+												           -e  &lt;env_var&gt;<br>
+												           -v  &lt;host_volume&gt;:&lt;guest_volume&gt;<br>
+												           --name  &lt;container_name&gt;<br>
+												            &lt;image_name&gt;: &lt;tag&gt;
+											</td>
+											<td>run an image as a container (-d: detached/-it: interactive)</td>
+										</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+					<section >
+						<div>
+							<h3>Creation (2)</h3>
+							<table>
+								<thead>
+									<tr>
+										<th>Code</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody style="font-size: 0.8em;">
+										<tr>
+											<td>docker exec -it &lt;container_id&gt; bash</td>
+											<td>run bash on a container</td>
+										</tr>
+										<tr>
+											<td>
+													docker kill &lt;container_id&gt;
+											</td>
+											<td>stop running container immediately</td>
+										</tr>
+										<tr>
+											<td>
+													docker stop &lt;container_id&gt;
+											</td>
+											<td>stop running container gracefully</td>
+										</tr>
+										<tr>
+											<td>
+													docker rm &lt;container_id&gt;
+											</td>
+											<td>remove stopped container</td>
+										</tr>
+										<tr>
+											<td>
+													docker start &lt;container_id&gt;
+											</td>
+											<td>start a stopped/killed container</td>
+										</tr>
+										<tr>
+											<td>
+													docker rmi &lt;image_id&gt;
+											</td>
+											<td>remove image</td>
+										</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+					<section >
+						<div>
+							<h3>Change Management</h3>
+							<table>
+								<thead>
+									<tr>
+										<th>Code</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody style="font-size: 0.7em;">
+										<tr>
+											<td>docker commit -m "comment" <br>
+											              -a "author_name" <br>
+											              &lt;container_id&gt; <br>
+											              &lt;image_name&gt;:&lt;tag&gt; </td>
+											<td>Commit changes made to a container as an image</td>
+										</tr>
+										<tr>
+											<td>
+												docker save -o &lt;save_image_to_path&gt;
+												            &lt;image_name&gt;
+											</td>
+											<td>Save an image to a file</td>
+										</tr>
+										<tr>
+											<td>
+													docker load -i &lt;path_to_image_file&gt;
+											</td>
+											<td>Load an image from a file</td>
+										</tr>
+										<tr>
+											<td>
+												docker tag &lt;image_id&gt;<br>
+												           &lt;image_name&gt;
+											</td>
+											<td>Rename an image or put a tag on it</td>
+										</tr>
+								</tbody>
+							</table>
+						</div>
+					</section>
+					<section >
+						<div>
+							<h3>Docker Compose</h3>
+							<ul style="font-size: 0.9em;">
+								<li class="fragment">Previously called Fig</li>
+								<li class="fragment">Managing multiple containers using <i>docker-compose.yml</i></li>
+								<li class="fragment">Orchestrating multiple containers</li>
+							</ul>
+							<table class="fragment">
+								<thead>
+									<tr>
+										<th>Code</th>
+										<th>Description</th>
+									</tr>
+								</thead>
+								<tbody style="font-size: 0.7em;">
+										<tr>
+											<td>docker-compose up -d </td>
+											<td>Build and running (detached) all containers</td>
+										</tr>
+										<tr>
+											<td>docker-compose kill/stop </td>
+											<td>Kill/Stop all containers</td>
+										</tr>
+										<tr>
+											<td>docker-compose logs </td>
+											<td>List logs from all containers</td>
+										</tr>
+									</tbody>
+								</table>
+						</div>
+					</section>
+				</section>
+
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'convex', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
