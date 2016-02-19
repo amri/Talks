@@ -37,3 +37,103 @@ Spring Boot (java/groovy)
 
   * Option 2: Open [Spring Initializer](http://start.spring.io/) site
 - Structures:
+  - Entry point class: For configuration and bootstrapping
+    - The `@SpringBootApplication` enables Spring component-scanning and Spring Boot auto-configuration. In fact, `@SpringBootApplication` combines three other useful annotations:
+      1. Spring’s `@Configuration`—Designates a class as a configuration class using Spring’s Java-based configuration. Although we won’t be writing a lot of configuration in this book, we’ll favor Java-based configuration over XML configuration when we do.
+      2. Spring’s `@ComponentScan`—Enables component-scanning so that the web controller classes and other components you write will be automatically discovered and registered as beans in the Spring application context. A little later in this chapter, we’ll write a simple Spring MVC controller that will be annotated with `@Controller`so that component-scanning can find it.
+      3. Spring Boot’s `@EnableAutoConfiguration`—This humble little annotation might as well be named `@Abracadabra` because it’s the one line of configuration that enables the magic of Spring Boot auto-configuration. This one line keeps you from having to write the pages of configuration that would be required otherwise.
+
+- Running:
+  1. From gradle: `gradle bootRun` or `gradle build && java -jar <app>-0.01.SNAPSHOT.jar`
+
+
+- Create Simple App:
+  1.  Define domain (POJO):
+    ```
+    @Entity
+    public class Book {
+
+        @Id
+        @GeneratedValue(strategy=GenerationType.AUTO)
+        private Long id;
+        private String isbn;
+        private String title;
+        private String author;
+
+        public Long getId() {
+          return id;
+        }
+
+        public void setId(Long id) {
+          this.id = id;
+        }
+
+        public String getIsbn() {
+          return isbn;
+
+        }
+
+        public void setIsbn(String isbn) {
+          this.isbn = isbn;
+        }
+
+        public String getTitle() {
+          return title;
+        }
+
+        public void setTitle(String title) {
+          this.title = title;
+        }
+
+        public String getAuthor() {
+          return author;
+        }
+
+        public void setAuthor(String author) {
+          this.author = author;
+        }
+    }
+    ```
+
+  2. Define repository:
+    ```
+      public interface BookRepository extends JpaRepository<Book, Long> {
+          List<Book> findByTitle(String title);
+      }
+    ```
+
+  3. Define controller:
+    ```
+    @Controller
+    @RequestMapping("/")
+    public class BookController {
+
+      private BookRepository bookRepository;
+
+      @Autowired
+      public BookController(
+                 BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
+      }
+
+      @RequestMapping(value="/{title}", method=RequestMethod.GET)
+      public String booksByTitle(
+          @PathVariable("title") String title,
+          Model model) {
+
+        List<Book> books =
+            bookRepository.findByTitle(title);
+        if (books != null) {
+          model.addAttribute("books", books);
+        }
+        return "books";
+      }
+
+      @RequestMapping(value="/{title}", method=RequestMethod.POST)
+      public String addToBooks(@PathVariable("title") String title, Book book) {
+        book.setTitle(title);
+        bookRepository.save(book);
+        return "redirect:/{title}";
+      }
+    }
+    ```
