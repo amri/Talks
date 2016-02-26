@@ -46,6 +46,7 @@ Spring Boot (java/groovy)
 - Running:
   1. From gradle: `gradle bootRun` or `gradle build && java -jar <app>-0.01.SNAPSHOT.jar`
 
+:date: **As of 20 February 2016**
 
 - Create Simple App:
   1.  Define domain (POJO):
