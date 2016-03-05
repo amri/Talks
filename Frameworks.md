@@ -2,6 +2,16 @@ Frameworks
 ========
 *tl;dr*
 
+[Hapi (Javascript)](http://hapijs.com/)
+------------------------------------
+- Very lightweight javascript server side application framework
+- Requirement: Node.js (+ npm)
+- Getting started
+  1. Create nodejs app: `npm init`
+  2. Add Hapi as your app dependencies: `npm install hapi --save`
+  3. Create `server.js` file and create `new Hapi.Server();`
+  4. Run your app by running `npm start`
+
 Spring (java)
 ------
 - Lightweight alternative to J2EE (achieve capabilities of EJB with simple POCO)
