@@ -26,6 +26,7 @@ Microservices
     - Multi Datacenter: Consul supports multiple datacenters out of the box. This means users of Consul do not have to worry about building additional layers of abstraction to grow to multiple regions.
     
   - Installation [here](https://www.consul.io/intro/getting-started/install.html)
+    - Alternative: running on [vagrantfile](https://github.com/hashicorp/consul/tree/master/demo/vagrant-cluster)
   - Download [here](https://www.consul.io/downloads.html)
 
 ### [Curator by Netflix](https://github.com/Netflix/curator)
