@@ -1,6 +1,9 @@
 Microservices
 ===========
 
+# Infrastructure / Platform
+1. [Vagrant](https://www.vagrantup.com/downloads.html): Create and configure lightweight, reproducible, and portable development environments.
+
 # Data Architecture
 1. [Command Query Responsibility Segregation](http://martinfowler.com/bliki/CQRS.html)
 2. [Database per service](http://microservices.io/patterns/data/database-per-service.html)
