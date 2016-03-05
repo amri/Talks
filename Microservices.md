@@ -4,6 +4,7 @@ Microservices
 # Infrastructure / Platform
 1. [Vagrant](https://www.vagrantup.com/downloads.html): Create and configure lightweight, reproducible, and portable development environments.
 2. [ElasticSearch](https://github.com/elastic/elasticsearch): A Distributed RESTful Search Engine
+3. [Redis](http://redis.io/): In-memory data structure store, used as database, cache and message broker. 
 
 # Data Architecture
 1. [Command Query Responsibility Segregation](http://martinfowler.com/bliki/CQRS.html)
