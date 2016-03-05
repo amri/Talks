@@ -10,7 +10,13 @@ Microservices
 3. [NoSQL comparison](http://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis)
 
 ## [Patterns & Anti-patterns](http://www.yegor256.com/2016/02/03/design-patterns-and-anti-patterns.html)
-## Service Discovery:
+## Service Discovery tools:
+### [Etcd by CoreOS](https://coreos.com/etcd/)
+  - Distributed key value store that provides a reliable way to store data across a cluster of machines.
+
+### [Registrator](https://github.com/gliderlabs/registrator)
+  - Automatically registers and deregisters services for any Docker container by inspecting containers as they come online
+
 ### [Consul by HashiCorp](https://www.consul.io/)
   - Features:
     - Service Discovery: Allow to discover api endpoint, services (databases etc) from DNS / HTTP client.
