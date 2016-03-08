@@ -13,6 +13,8 @@ Microservices
 3. Eventual Consistency & [BASE model](http://queue.acm.org/detail.cfm?id=1394128)
 3. [NoSQL comparison](http://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis)
 
+## [The Twelve-Factor app](http://12factor.net/)
+
 ## [Patterns & Anti-patterns](http://www.yegor256.com/2016/02/03/design-patterns-and-anti-patterns.html)
 ## Service Discovery tools:
 ### [Etcd by CoreOS](https://coreos.com/etcd/)
