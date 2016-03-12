@@ -3,5 +3,5 @@ Design Patterns
 =================
 | Patterns        | C#           | Java  |
 | ------------- |:-------------:| -----:|
-| Abstract Factory | |  |
-| Decorator |       |    |
+| <i class="material-icons">&nbsp</i> Abstract Factory  | |  |
+| <i class="material-icons"></i> Decorator |       |    |
