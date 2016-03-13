@@ -11,6 +11,30 @@ Microservices
 6. PubSub/Messanging: [Redis](http://redis.io/): In-memory data structure store, used as database, cache and message broker. 
   - Vagrant script [here](https://github.com/JasonPunyon/redishobo)
 
+### Mesos
+- Resource management
+- Abstracts away individual machines
+- Launches tasks: Long running, one off, schedule
+- Maintain state about available resources (CPU/Memory) on each slave machine
+- Master/slave architecture
+  - 3 Masters (connected by Zookeper for synchronizing statutes): 1 active & 2 standby
+  - 1 Master have 3 Slaves
+- Frameworks: Scheduler & Executor
+
+### Marathon
+- Execute for long running tasks i.e.,Docker
+- Private PaaS, HTTP API
+- Marathon task:
+  - ID
+  - Docker image,
+  - Version,
+  - Health,
+  - Ports,
+  - Command/Args
+- Constraints (rules to offers from mesos): UNIQUE, CLUSTER, LIKE, UNLIKE, GROUP_BY
+- Upgrade API: PUT request with new Docker tag using [Blue-Green Deploy](http://martinfowler.com/bliki/BlueGreenDeployment.html)intel
+
+
 # Data Architecture
 1. [Command Query Responsibility Segregation](http://martinfowler.com/bliki/CQRS.html)
 2. [Database per service](http://microservices.io/patterns/data/database-per-service.html)
