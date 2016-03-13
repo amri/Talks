@@ -2,9 +2,13 @@ Microservices
 ===========
 
 # Infrastructure / Platform
-1. [Vagrant](https://www.vagrantup.com/downloads.html): Create and configure lightweight, reproducible, and portable development environments.
-2. [ElasticSearch](https://github.com/elastic/elasticsearch): A Distributed RESTful Search Engine
-3. [Redis](http://redis.io/): In-memory data structure store, used as database, cache and message broker. 
+0. Microservices: Java, .NET, Python
+1. Infrastructure: [Vagrant](https://www.vagrantup.com/downloads.html): Create and configure lightweight, reproducible, and portable development environments.
+2. Logging & Log collection: [ElasticSearch](https://github.com/elastic/elasticsearch): A Distributed RESTful Search Engine, Logstash, Kibana
+3. Service Discovery: [Consul](https://www.consul.io/)
+4. Monitoring & Metrics: [Prometheus](https://prometheus.io/)
+5. Deployment: [Docker](https://www.docker.com/), [Mesos](http://mesos.apache.org/), and [Marathon](https://mesosphere.github.io/marathon/)
+6. PubSub/Messanging: [Redis](http://redis.io/): In-memory data structure store, used as database, cache and message broker. 
   - Vagrant script [here](https://github.com/JasonPunyon/redishobo)
 
 # Data Architecture
