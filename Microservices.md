@@ -38,6 +38,10 @@ Microservices
 # Data Architecture
 1. [Command Query Responsibility Segregation](http://martinfowler.com/bliki/CQRS.html)
 2. [Conflict-free Replicated DataType](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
+  - [Paper - abstraction](https://hal.inria.fr/file/index/docid/617341/filename/RR-7687.pdf)
+  - [Paper - specification](http://hal.upmc.fr/file/index/docid/555588/filename/techreport.pdf)
+  - Strong Eventual Consistency (SEC)
+  - Approaches: State & Operation based
 3. [Database per service](http://microservices.io/patterns/data/database-per-service.html)
 4. Eventual Consistency & [BASE model](http://queue.acm.org/detail.cfm?id=1394128)
 5. [NoSQL comparison](http://kkovacs.eu/cassandra-vs-mongodb-vs-couchdb-vs-redis)
