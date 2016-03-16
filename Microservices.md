@@ -72,3 +72,5 @@ Microservices
 ### [Curator by Netflix](https://github.com/Netflix/curator)
 
 ### [Zookeeper by Apache](http://zookeeper.apache.org)
+
+### [Coding guidelines](http://ithare.com/pre-coding-checklist-things-everybody-hates-but-everybody-needs-them-too-from-source-control-to-coding-guidelines/)
