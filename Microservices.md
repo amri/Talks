@@ -40,6 +40,7 @@ Microservices
 2. [Conflict-free Replicated DataType](https://en.wikipedia.org/wiki/Conflict-free_replicated_data_type)
   - [Paper - abstraction](https://hal.inria.fr/file/index/docid/617341/filename/RR-7687.pdf)
   - [Paper - specification](http://hal.upmc.fr/file/index/docid/555588/filename/techreport.pdf)
+  - [Video - SEC & CRDT)(http://research.microsoft.com/apps/video/default.aspx?id=153540&r=1)
   - Strong Eventual Consistency (SEC)
   - Approaches: State & Operation based
 3. [Database per service](http://microservices.io/patterns/data/database-per-service.html)
