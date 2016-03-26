@@ -15,7 +15,45 @@ Frameworks
   - `React.Children.count(children)`
   - `React.Children.only(children)`
 - Spread attribute: `<ShoppingTotal {...this.props} />`
-  
+  - To pass the props to the other component
+  - Works for any JS object
+- propTypes: `React.PropTypes.___`
+  - Static typing component's props (specifying what comes in)
+  - Types: number, string, func, bool, array, object, node, element
+  - Member: 
+    - `instanceOf(class)`
+    - `oneOf([val1,val2])`
+    - `arrayOf(propType)`
+    - `objectOf(propType)`
+  - Example:
+  ```javascript
+  React.createClass({
+    propTypes: {
+        items: React.PropTypes.arrayOf(React.PropTypes.object)
+    },
+    getDefaultProps: function() {
+      return {
+        foo: 'foo'
+      };  
+    }
+    ...
+  });
+  ```
+- Local State: `this.state`
+  - Does not get pass down from above
+  - `this.setState({foo: 'bar'})` will trigger re-render
+    - Can be using it sparingly by using jquery to manage the state (also Backbone)
+  - `getInitialState()`
+- React lifecycle methods:
+  - `componentWillMount`: before 
+  - `componentDidMount`: after
+  - `componentWillReceiveProps(newProps)`: when have gotten new props
+  - `componentWillUpdate(newProps, newState)`: after get new state, but before renders into DOM
+  - `componentDidUpdate(oldProps, oldState)`: right after things goes into DOM
+  - `componentWillUnmount`
+  - `shouldComponentUpdate()`:
+    - Invoked before rendering when new props or state are being received
+    - Use this as an opportunity to return false when you're certain that the transition to the new props and state will not require a component update.
 
 [Hapi (Javascript)](http://hapijs.com/)
 ------------------------------------
