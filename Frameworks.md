@@ -10,7 +10,11 @@ Frameworks
   - Things that being passed to components OR to other components
   - Everything that's not an HTML attribute
   - Can be used with `map`, `forEach` to mapped to perform function or return react element(s)
-  - 
+- Children: get children item
+  - `React.Children.map(children, function(child){})`
+  - `React.Children.count(children)`
+  - `React.Children.only(children)`
+- Spread attribute: `<ShoppingTotal {...this.props} />`
   
 
 [Hapi (Javascript)](http://hapijs.com/)
