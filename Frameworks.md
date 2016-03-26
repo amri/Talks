@@ -2,6 +2,17 @@ Frameworks
 ========
 *tl;dr*
 
+[React (Javascript)](https://facebook.github.io/react/)
+- Isomerphic 
+- Element
+  - `React.DOM.div({attributes},{element1},{elementS})`
+- Props `this.props.<props>`
+  - Things that being passed to components OR to other components
+  - Everything that's not an HTML attribute
+  - Can be used with `map`, `forEach` to mapped to perform function or return react element(s)
+  - 
+  
+
 [Hapi (Javascript)](http://hapijs.com/)
 ------------------------------------
 - Very lightweight javascript server side application framework
