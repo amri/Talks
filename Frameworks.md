@@ -10,6 +10,25 @@ Frameworks
   - Things that being passed to components OR to other components
   - Everything that's not an HTML attribute
   - Can be used with `map`, `forEach` to mapped to perform function or return react element(s)
+  - Validating props (making sure if it's there, if it's the correct type, if it's part of an array value):
+  - Defaulting props (if turns out to be empty):
+  
+  ```javascript
+  React.createClass({
+    propTypes: {
+      description: React.PropTypes.string,
+      category: React.PropTypes.oneOf(['News','Photos']).isRequired,
+      dialog: React.PropTypes.instanceOf(Dialog).isRequired
+    },
+    getDefaultProps: function() {
+        return {
+          value: 'default value'
+        };
+      }
+    ...
+  });
+  ```
+  
 - Children: get children item
   - `React.Children.map(children, function(child){})`
   - `React.Children.count(children)`
@@ -51,7 +70,7 @@ Frameworks
   - `componentWillUpdate(newProps, newState)`: after get new state, but before renders into DOM
   - `componentDidUpdate(oldProps, oldState)`: right after things goes into DOM
   - `componentWillUnmount`
-  - `shouldComponentUpdate()`:
+  - `shouldComponentUpdate(nextProps, nextState)`:
     - Invoked before rendering when new props or state are being received
     - Use this as an opportunity to `return false` when you're certain that the transition to the new props and state will not require a component update.
 
