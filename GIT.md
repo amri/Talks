@@ -14,6 +14,10 @@ Git
 3. Forked workflow: Fork -> Clone -> Checkout. Commit -> Push -> Pull Request.
 4. Branching workflow: Create branches for each contributor. Trust contributor.
 
+## Deployment
+1. Scheduled [git-flow] (1 master, 1 development, several features, hotfixes, bug fixes branches). Using version as branch name. Example: Drupal.
+2. Continuous (1 master & several feature branches). Everything is equally important. Rely heavily on automated testing/gatekeeper (series of gated checkin/testing suites). Example: Git
+
 ## Commands
 1. Version: `git --version`
 2. Help: `git help all`
@@ -27,5 +31,9 @@ Git
 10. Commit: `git commit [-m <comment>]`
 11. Show remote repos: `git remote` & `git remote -v` 
 12. Copying snapshot just by `cp <cloned_repo> <new_repo>` include remote
-13. 
+13. Add remote repos: `git remote add <remote_name> <remote_repo_path_or_url>`
+14. Show Branches (all & remotes): `git branch -a` & `git branch -r`
+15. Update branches: `git fetch`
+16. Checkout a branch: local: `git checkout <branch_name>` & remote with tracking: `git checkout --track <remote>/<branch_name>`. If only have 1 remote, no need to use remote name.
+17.  
 
