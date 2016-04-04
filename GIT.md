@@ -17,10 +17,15 @@ Git
 ## Commands
 1. Version: `git --version`
 2. Help: `git help all`
-3. Clone: `git clone <giturl> [foldername]`
+3. Clone: `git clone <giturl> [foldername]` | Clone from local repo: `git clone <git folder path> [foldername]` >> `git remote -v` show local remote
 4. History: `git log` & `git log --oneline`
 5. Graph & GUI: `git log --oneline --graph` & `gitk`
-6. 
-
-
+6. Config: `git config [--global|--local] user.email 'email.com'` 
+7. Initialized a directory: `mkdir <project>`, `cd <project>`, & `git init`
+8. Check untracked files: `git status`
+9. Add untracked files `git add <file>` & `git add .`
+10. Commit: `git commit [-m <comment>]`
+11. Show remote repos: `git remote` & `git remote -v` 
+12. Copying snapshot just by `cp <cloned_repo> <new_repo>` include remote
+13. 
 
