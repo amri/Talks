@@ -1,5 +1,6 @@
 Git
 ----
+# Setting up [Gerrit](https://www.gerritcodereview.com/) Code Review
 
 ## Setup ssh key
 `cat ~/.ssh/id_rsa.pub`
