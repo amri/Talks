@@ -1,3 +1,6 @@
+## One idea one commit
+https://secure.phabricator.com/book/phabflavor/article/recommendations_on_revision_control/
+
 ### Workflow
 1. Pull master's current code
 2. Use `arc branch B` to create a local branch
