@@ -5,6 +5,7 @@ https://secure.phabricator.com/book/phabflavor/article/recommendations_on_revisi
 ### Workflow
 http://thomas-barthelemy.github.io/2015/08/20/phabricator-arcanist-flow/
 https://sites.google.com/a/khanacademy.org/forge/for-developers/code-review-policy/using-phabricator#TOC-Day-to-day-use
+https://secure.phabricator.com/w/guides/arcanist_workflows/
 1. Pull master's current code
 2. Use `arc branch B` to create a local branch
 3. Code your changes and use `arc diff` to diff your code
