@@ -3,7 +3,7 @@ Git
 
 # Setting up Gitlab Code Review
 1. Developer will not be able to merge to Master, but they can create branch (e.g., Hotfix, Patch, Feature)
-2. After Developer checkout a feature branch and make changes, they can submit a Merge Request.
+2. After Developer checkout a feature branch (`git checkout -b feature/cool-new-feature`) and make changes (`git push --set-upstream origin feature/cool-new-feature`), they can submit a Merge Request.
 2. Master will be the one that accept/rejects/review Merge Requests
 3. After Merge Request submitted, any Master should review it and make decision whether to accept/reject/review it.
 4. If Merge Request accepted, remove the feature branch. The changes will be reflected to master (pending build process status)
